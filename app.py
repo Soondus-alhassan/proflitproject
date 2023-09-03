@@ -4,6 +4,7 @@ import os
 from openpyxl import load_workbook
 from openpyxl.styles import PatternFill
 import requests
+from flask import jsonify
 
 app = Flask(__name__)
 
@@ -84,6 +85,46 @@ def process_file(filename):
     
     except Exception as e:
         return f'Error processing the file: {str(e)}'
+
+
+
+@app.route('/data-profiling', methods=['GET', 'POST'])
+def data_profiling():
+    if request.method == 'POST':
+        if 'file' not in request.files:
+            return redirect(request.url)
+        
+        file = request.files['file']
+        
+        if file.filename == '':
+            return redirect(request.url)
+        
+        if file and allowed_file(file.filename):
+            file_path = os.path.join(app.config['UPLOAD_FOLDER'], file.filename)
+            file.save(file_path)
+            profile = perform_data_profiling(file_path)
+            return jsonify(profile)  # Return JSON representation of the profile for now; you can format this as needed later
+            
+        else:
+            return 'Invalid file format. Please upload an Excel file with .xlsx extension.'
+    else:
+        return render_template('data_profiling.html')
+
+# Function to perform data profiling on an Excel file
+def perform_data_profiling(file_path):
+    df = pd.read_excel(file_path)
+    profile = {}
+
+    for col in df.columns:
+        profile[col] = {
+            'Total records': len(df[col]),
+            'Unique values': df[col].nunique(),
+            'Missing values': df[col].isna().sum(),
+            'Top 5 values': df[col].value_counts().head(5).to_dict()
+        }
+        # Add more profiling details as necessary
+
+    return profile
 
 if __name__ == '__main__':
     app.run(debug=True)

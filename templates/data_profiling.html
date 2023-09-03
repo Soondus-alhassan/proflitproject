@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <!-- Include Bootstrap CSS or any other libraries you need -->
+
+    <title>Data Profiling</title>
+  </head>
+  <body>
+    <div class="container mt-5">
+        <h2>Data Profiling</h2>
+        <form action="/data-profiling" method="POST" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="file" class="form-label">Upload Excel File</label>
+                <input type="file" class="form-control" id="file" name="file" accept=".xlsx">
+            </div>
+            <button type="submit" class="btn btn-primary">Profile Data</button>
+        </form>
+    </div>
+  </body>
+</html>
