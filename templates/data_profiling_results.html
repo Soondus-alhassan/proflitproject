@@ -1,0 +1,33 @@
+<!-- data_profiling_results.html -->
+
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Data Profiling Results</h2>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>Column Name</th>
+            <th>Total Records</th>
+            <th>Unique Values</th>
+            <th>Missing Values</th>
+            <th>Top 5 Values</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for column, details in profile.items() %}
+        <tr>
+            <td>{{ column }}</td>
+            <td>{{ details["Total records"] }}</td>
+            <td>{{ details["Unique values"] }}</td>
+            <td>{{ details["Missing values"] }}</td>
+            <td>{{ details["Top 5 values"] | to_string }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<a href="{{ url_for('data_profiling') }}">Back to Data Profiling</a>
+
+{% endblock %}
