@@ -1,7 +1,6 @@
 {% extends "base.html" %}
    {% block title %} Excel Operations {% endblock %}
 
-    
    {% block content %}
 <!-- Tabs header -->
 <div>
@@ -54,16 +53,15 @@
 </div>
 
 
-
 <script>
     function showTab(tabName) {
         // Hide all tabs
-        document.getElementById('upload').style.display = 'none';
-        document.getElementById('dataProfiling').style.display = 'none';
-        document.getElementById('validate').style.display = 'none';
+        document.getElementById("upload").style.display = "none";
+        document.getElementById("dataProfiling").style.display = "none";
+        document.getElementById("validate").style.display = "none";
 
         // Show the selected tab
-        document.getElementById(tabName).style.display = 'block';
+        document.getElementById(tabName).style.display = "block";
     }
 </script>
 {% endblock %}
