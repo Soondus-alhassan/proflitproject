@@ -1,11 +1,11 @@
 
         /* Global styles that you can apply to the entire site */
-        body {
+         /*body {
             font-family: Arial, sans-serif;
-            background-color: #f5f5f8;
+           background-color: #f5f5f8;
             margin: 0;
             padding: 0;
-        }
+        }*/
 
         header {
             background-color: #333;
@@ -31,13 +31,13 @@
             background-color: #555;
         }
 
-        .container {
+        /*.container {
             max-width: 800px;
             margin: 2em auto;
             padding: 20px;
             background-color: #fff;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        }
+        }*/
 
         table {
             width: 100%;
