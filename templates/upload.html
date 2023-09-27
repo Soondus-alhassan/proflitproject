@@ -1,11 +1,6 @@
 {% extends "base.html" %}
-
-{% block content %}
-
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Excel Operations</title>
+   {% block title %} Excel Operations {% endblock %}
+   {% block head %}
     <style>
         /* Styling for the tabs */
         .tab {
@@ -21,8 +16,8 @@
             background-color: #ddd;
         }
     </style>
-</head>
-<body>
+    {% endblock %}
+    {% block content %}
 
 <!-- Tabs header -->
 <div>
@@ -72,7 +67,9 @@
         <input type="submit" value="Validate Data">
     </form>
 </div>
+{% endblock %}
 
+{% block javascript %}
 <script>
     function showTab(tabName) {
         // Hide all tabs
@@ -84,8 +81,4 @@
         document.getElementById(tabName).style.display = 'block';
     }
 </script>
-
-</body>
-</html>
-
 {% endblock %}
