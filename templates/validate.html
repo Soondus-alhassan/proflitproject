@@ -1,7 +1,5 @@
 {% extends "base.html" %}
 
-
-
 {% block title %}Data Validation Results {% endblock %}
 {% block content %}
 
@@ -33,7 +31,7 @@
 {% endif %}
 
 <!-- Button to return back to the main page -->
-<a href="{{ url_for('index') }}">Back to Home Page</a>
+<a class ="btn btn-outline-secondary" href="{{ url_for('index') }}" role="button">Back to Home Page</a>
 
 
 {% endblock %}
