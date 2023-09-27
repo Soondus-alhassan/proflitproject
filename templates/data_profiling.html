@@ -1,15 +1,8 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-   
+{% extends "base.html" %}
+   {% block title %} Data Profiling {% endblock %}
 
-    <!-- Bootstrap CSS -->
-    <!-- Include Bootstrap CSS or any other libraries you need -->
+   {% block content %}
 
-    <title>Data Profiling</title>
-  </head>
-  <body>
     <div class="container mt-5">
         <h2>Data Profiling</h2>
         <form action="/data-profiling" method="POST" enctype="multipart/form-data">
@@ -20,5 +13,4 @@
             <button type="submit" class="btn btn-primary">Profile Data</button>
         </form>
     </div>
-  </body>
-</html>
+

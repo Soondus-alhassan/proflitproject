@@ -1,78 +1,80 @@
 
         /* Global styles that you can apply to the entire site */
-         /*body {
-            font-family: Arial, sans-serif;
-           background-color: #f5f5f8;
-            margin: 0;
-            padding: 0;
-        }*/
 
-        header {
-            background-color: #333;
-            color: rgb(23, 2, 2);
-            text-align: center;
-            padding: 1em 0;
-        }
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f8;
+    margin: 0;
+    padding: 0;
+}
 
-        nav {
-            display: flex;
-            justify-content: center;
-            background-color: #444;
-        }
+header {
+    background-color: #333;
+    color: rgb(225, 221, 221);
+    text-align: center;
+    padding: 1em 0;
+}
 
-        nav a {
-            color: white;
-            padding: 14px 20px;
-            text-decoration: none;
-            text-align: center;
-        }
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #444;
+}
 
-        nav a:hover {
-            background-color: #555;
-        }
+nav a {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    text-align: center;
+}
 
-        /*.container {
-            max-width: 800px;
-            margin: 2em auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        }*/
+nav a:hover {
+    background-color: #555;
+}
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
+.container {
+    max-width: 800px;
+    margin: 2em auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
 
-        table, th, td {
-            border: 1px solid black;
-        }
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
 
-        th, td {
-            padding: 8px;
-            text-align: left;
-        }
+table, th, td {
+    border: 1px solid black;
+}
 
-        th {
-            background-color: #f2f2f2;
-        }
+th, td {
+    padding: 8px;
+    text-align: left;
+}
 
-        tr:hover {
-            background-color: #f5f5f5;
-        }
-    
-              /* Styling for the tabs */
-              .tab {
-                display: inline-block;
-                padding: 10px 20px;
-                margin: 10px;
-                border: 1px solid #ccc;
-                cursor: pointer;
-            }
-    
-            /* Style for the active tab */
-            .active-tab {
-                background-color: #ddd;
-            }
+th {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+}
+
+/* Styling for the tabs */
+
+.tab {
+display: inline-block;
+padding: 10px 20px;
+margin: 10px;
+border: 1px solid #ccc;
+cursor: pointer;
+}
+
+/* Style for the active tab */
+.active-tab {
+background-color: #ddd;
+}
             
