@@ -9,10 +9,10 @@ body {
 }
 
 header {
-    background-color: #333;
+    /*background-color: #333;*/
     color: rgb(225, 221, 221);
     text-align: center;
-    padding: 1em 0;
+    padding-bottom: 1em;
 }
 
 nav {

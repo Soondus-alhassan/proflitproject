@@ -1,26 +1,72 @@
 {% extends "base.html" %}
    {% block title %} Demo{% endblock %}
 
- 
-    </head>
-       <body>  
-     
-          {% block content %}
-         <div class="container-fluid text-center" style= "height: 100vh">
-           <div class="row">
-             <div class="col-sm-2 bg-light border" style= "height: 100vh">
-               Level 1: .col-sm-2 (SIDEBAR)
-
-
-             
-             </div>
-             <div class="col-sm-10">
-               <div class="row">
-                 <div class="col-10 col-sm-9 border" style= "height: 100vh">
-                   Level 2: .col-8 .col-sm-6
-                   SPREADSHEET VIEW RESULTS
+        
+        {% block content %}
+            
+                 <div class="col-9 col-sm-9 border" style= "height: 100vh">
+                    <div>
+                        <div class="tab active-tab" onclick="showTab('upload')">Upload Excel</div>
+                        <div class="tab" onclick="showTab('dataProfiling')">Data Profiling</div>
+                        <div class="tab" onclick="showTab('validate')">Validate</div>
+                    </div>
+                    
+                    <!-- Introduction Section -->
+                    <div class="intro-section">
+                        <h2>Welcome to the Excel Data Quality Tool</h2>
+                        <p>
+                            This platform allows you to upload an Excel file for a comprehensive data quality check. Upon uploading your spreadsheet, our system will:
+                        </p>
+        
+                            <li>Highlight duplicate company names for easy identification.</li>
+                            <li>Check and highlight any invalid UK postcodes.</li>
+                            <li>Provide a detailed data profiling report to help you understand your dataset's characteristics.</li>
+                       
+                        <p>
+                            Get started by selecting your Excel file and let our tool do the magic!
+                        </p>
+                    </div>
+                    
+                    <!-- Upload Excel Content -->
+                    <div id="upload" style="display:block;">
+                        <h1>Upload an Excel File</h1>
+                        <form method="POST" action="/upload" enctype="multipart/form-data">
+                            <input type="file" name="file" accept=".xlsx">
+                            <input type="submit" value="Upload">
+                        </form>
+                    </div>
+                    
+                    <!-- Data Profiling Content -->
+                    <div id="dataProfiling" style="display:none;">
+                        <h1>Data Profiling</h1>
+                        <form method="POST" action="/data-profiling" enctype="multipart/form-data">
+                            <input type="file" name="file" accept=".xlsx">
+                            <input type="submit" value="Profile Data">
+                        </form>
+                    </div>
+                    
+                    <div id="validate" style="display:none;">
+                        <h1>Validate and Standardize Data</h1>
+                        <form method="POST" action="/validate" enctype="multipart/form-data">
+                            <input type="file" name="file" accept=".xlsx">
+                            <input type="submit" value="Validate Data">
+                        </form>
+                    </div>
+                    
+                    
+                    <script>
+                        function showTab(tabName) {
+                            // Hide all tabs
+                            document.getElementById("upload").style.display = "none";
+                            document.getElementById("dataProfiling").style.display = "none";
+                            document.getElementById("validate").style.display = "none";
+                    
+                            // Show the selected tab
+                            document.getElementById(tabName).style.display = "block";
+                        }
+                    </script>
                  </div>
-                 <div class="col-2 col-sm-3 border" style= "height: 100vh">
+                 <div class="col-3 col-sm-2 border" style= "height: 100vh">
                    Rule-types
                    <ul>
                     <li>sanitization: check valid phonenumber </li>
@@ -40,12 +86,6 @@
            </div>
          </div>
 
-
-           <footer><h1>FOOTER</h1></footer>
-         
-         
-           </div>
-         </div>
 
   
          {% endblock %}
