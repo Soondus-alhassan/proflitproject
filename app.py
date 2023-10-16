@@ -9,6 +9,7 @@ import re
 import phonenumbers
 import upload_file
 
+
 app = Flask(__name__)
 
 UPLOAD_FOLDER = 'uploads'
@@ -41,7 +42,7 @@ def standardize_country_name(country_name):
 
 @app.route('/')
 def index():
-    return render_template('upload.html')
+    return render_template('dash.html')
 
 @app.route('/upload', methods=['POST'])
 def upload_file():
