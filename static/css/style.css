@@ -9,10 +9,11 @@ body {
 }
 
 header {
-    /*background-color: #333;*/
+    /*background-color: #333;
+    padding-bottom: 1em;*/
     color: rgb(225, 221, 221);
     text-align: center;
-    padding-bottom: 1em;
+    
 }
 
 nav {
@@ -78,3 +79,15 @@ cursor: pointer;
 background-color: #ddd;
 }
             
+.navbar{
+    transition: all .2s;
+    background: #fff;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,.15);
+    z-index: 3;}
+
+.sidebar {
+    width: 16rem;
+    transition: all .2s;
+    background: #fff;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,.15);
+    z-index: 2;}

@@ -18,7 +18,7 @@
        <header>
         {% block header %}
        
-          <nav class="navbar bg-body-tertiary ">
+          <nav class="navbar bg-body ">
              <div class="container-fluid  ">
                <a class="navbar-brand " href="#">
                  <img src="/static/cap_logo.png" alt="Logo" width="30"  class="d-flex-block align-text-top">
@@ -30,7 +30,7 @@
          </header>
          <div class="container-fluid text-center" style= "height: 100vh">
           <div class="row">
-            <div class="col-sm-1 bg-light border" style= "height: 100vh">
+            <div class="col-sm-1  border sidebar" style= "height: 100vh">
               Level 1: .col-sm-1 (SIDEBAR)
             </div> {% block content %}{% endblock %}
             <div class="col-sm-11">
