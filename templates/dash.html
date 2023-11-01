@@ -5,14 +5,16 @@
         {% block content %}
             
                  <div class="col-9 col-sm-9 border bg-light" style= "height: 100vh">
-                    <div>
+                    
+                   <!-- <div>
                         <div class="tab active-tab" onclick="showTab('upload')">Upload Excel</div>
                         <div class="tab" onclick="showTab('dataProfiling')">Data Profiling</div>
                         <div class="tab" onclick="showTab('validate')">Validate</div>
-                    </div>
+                    </div>-->
+        
                                        <!-- Introduction Section -->
                     <div class="intro-section">
-                        <h2>Welcome to the Excel Data Quality Tool</h2>
+                        <h2>Welcome to Profilit</h2>
                         <p>
                             This platform allows you to upload an Excel file for a comprehensive data quality check. Upon uploading your spreadsheet, our system will:
                         </p>
@@ -26,6 +28,57 @@
                         </p>
                     </div>
                     
+                    <div>
+                        <button id="uploadbutton" type="button" class="btn btn-outline-primary" >Upload</button>
+                        <button id="datprof" type="button" class="tab btn btn-primary" onclick="showTab('dataProfiling')">Data Profiling</button>
+                    <a href="#" class=" btn btn-primary" id="valid" onclick="showTab('validate')">Validate</a> 
+                </div>
+    
+    
+                <!-- Added script on 18/10/2023 to activate buttons-->
+                <script> 
+
+                document.getElementById("uploadbutton").addEventListener("click", activateColour);
+                function activateColour(){const list = document.getElementById("uploadbutton").classList;
+                
+                var flag = TRUE;
+                function switchOFF(){
+                    list.remove("btn-outline-primary");
+                    list.add("btn-primary");
+                    
+                     
+                }
+                function switchON(){
+                    list.remove("btn-primary");
+                    list.add("btn-outline-primary");
+                    
+                }
+
+                if (flag = ON){
+                    switchOFF();
+                    return flag = OFF
+                }
+                else if (flag = OFF){
+                    switchON();
+                    return flag = ON
+                }
+                }
+                
+                
+
+                document.getElementById('upload').addEventListener("click", function showTab(){
+                                // Hide all tabs
+                                //document.getElementById("upload").style.display = "none";//
+                                document.getElementById("uploadbutton").style.backgroundColor = 'red';
+                                /*document.getElementById("dataProfiling").style.display = "none";
+                                document.getElementById("validate").style.display = "none";
+                        
+                                // Show the selected tab
+                                document.getElementById(tabName).style.display = "block";*/
+                            })
+                
+                </script>
+                
                     
                     <!-- Upload Excel Content -->
                     <div id="upload" style="display:block;">
@@ -54,7 +107,7 @@
                     </div>
                     
                     
-                    <script>
+                    <script>/*
                         function showTab(tabName) {
                             // Hide all tabs
                             document.getElementById("upload").style.display = "none";
@@ -63,7 +116,7 @@
                     
                             // Show the selected tab
                             document.getElementById(tabName).style.display = "block";
-                        }
+                        }*/
                     </script>
                  </div>
                  <div class="col-3 col-sm-2 border" style= "height: 100vh">
