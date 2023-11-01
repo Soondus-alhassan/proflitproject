@@ -42,7 +42,7 @@ def standardize_country_name(country_name):
 
 @app.route('/')
 def index():
-    return render_template('upload.html')
+    return render_template('original.html')
 
 @app.route('/upload', methods=['POST'])
 def upload_file():
