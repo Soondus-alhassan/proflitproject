@@ -1,7 +1,7 @@
 <!-- data_profiling_results.html -->
 
 {% extends "base.html" %}
-
+{% block header %}{% endblock %}
 {% block content %}
 <h2>Data Profiling Results</h2>
 
@@ -27,7 +27,7 @@
         {% endfor %}
     </tbody>
 </table>
-
+<br> 
 <a class="btn btn-outline-primary"href="{{ url_for('data_profiling') }}">Back to Data Profiling</a>
 <a class="btn btn-outline-secondary" href="{{ url_for('index') }}" role="button">Back to Home Page</a>
 
