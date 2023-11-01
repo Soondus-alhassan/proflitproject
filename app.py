@@ -15,7 +15,6 @@ app = Flask(__name__)
 UPLOAD_FOLDER = 'uploads'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 COUNTRIES = ["USA", "United Kingdom", "Canada"]
-app.DEBUG = 'ON'
 
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in {'xlsx'}
@@ -43,7 +42,7 @@ def standardize_country_name(country_name):
 
 @app.route('/')
 def index():
-    return render_template('dash.html')
+    return render_template('upload.html')
 
 @app.route('/upload', methods=['POST'])
 def upload_file():
