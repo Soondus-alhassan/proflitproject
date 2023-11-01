@@ -2,7 +2,7 @@
 
    {% block title %}Excel Operations {% endblock %}
    {% block content %}
-<body>
+
 
     <!-- Introduction Section -->
 <div class="intro-section">
@@ -20,7 +20,9 @@
     </p>
 </div>
 
+<!--- end of introduction -->
 
+    <!-- Tabs -->
     <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item" role="presentation">
           <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Data Quality</button> 
@@ -32,6 +34,11 @@
           <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">Validate</button>
         </li>
       </ul>
+
+
+      <!--- end of tabs -->
+
+       <!-- Event triggered content -->
       <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0"> Highlight duplicate company names for easy identification.
             Check and highlight any invalid UK postcodes. <form method="POST" action="/upload" enctype="multipart/form-data">
@@ -39,21 +46,27 @@
             <input type="submit" value="Upload">
         </form></div>
         <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">The data profiling page analyzes the uploaded Excel sheet and provides a summary of its contents, such as total records, unique values, missing values, and the top five occurrences for each column 
+           <!-- added link to data profiling homepage -->
+           <iframe width="100%" height="600px" src="{{ url_for('data_profiling') }}" allowfullscreen="true">
+          <!--
             <form method="POST" action="/data-profiling" enctype="multipart/form-data">
                 <input type="file" name="file" accept=".xlsx">
                 <input type="submit" value="Profile Data">
             </form>
-           
+           -->
         </div>
-        <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">Validate and Standardize Data <form method="POST" action="/validate" enctype="multipart/form-data">
+        <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">Validate and Standardize Data 
+            
+            <form method="POST" action="/validate" enctype="multipart/form-data">
             <input type="file" name="file" accept=".xlsx">
             <input type="submit" value="Validate Data">
         </form>
             <iframe width="100%" height="600px" src="https://app.powerbi.com/reportEmbed?reportId=f1505987-76f1-4420-9cb0-ca7d7b4ddd71&amp;autoAuth=true&amp;ctid=76a2ae5a-9f00-4f6b-95ed-5d33d77c4d61" allowfullscreen="true">
-        </iframe></div>
+        </iframe>
+    </div>
        
       </div>
 
-</body>
+      <!--- end of content -->
 
 {% endblock %} 
