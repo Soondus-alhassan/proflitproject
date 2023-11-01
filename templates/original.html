@@ -3,13 +3,27 @@
    {% block title %}Excel Operations {% endblock %}
    {% block content %}
 <body>
-   
-<!-- Tabs header -->
+   <!-- Upload Excel Content -->
+<ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" onclick="showTab('upload')"href="#">Upload Excel</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#" onclick="showTab('dataProfiling')">Data Profiling</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#" onclick="showTab('validate')">Validate</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+    </li>
+  </ul>
+<!-- Tabs header 
 <div>
     <div class="tab active-tab" onclick="showTab('upload')">Upload Excel</div>
     <div class="tab" onclick="showTab('dataProfiling')">Data Profiling</div>
     <div class="tab" onclick="showTab('validate')">Validate</div>
-</div>
+</div>-->
 
 <!-- Introduction Section -->
 <div class="intro-section">
@@ -27,7 +41,10 @@
     </p>
 </div>
 
-<!-- Upload Excel Content -->
+
+  
+  <!-- End Example Code -->
+
 <div id="upload" style="display:block;">
     <h1>Upload an Excel File</h1>
     <form method="POST" action="/upload" enctype="multipart/form-data">
