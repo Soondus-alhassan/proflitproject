@@ -23,7 +23,7 @@
 
     <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item" role="presentation">
-          <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Upload Excel </button> 
+          <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Data Quality</button> 
         </li>
         <li class="nav-item" role="presentation">
           <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Data Profiling</button>
@@ -36,7 +36,8 @@
         </li>
       </ul>
       <div class="tab-content" id="myTabContent">
-        <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">Upload an Excel File    <form method="POST" action="/upload" enctype="multipart/form-data">
+        <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0"> Highlight duplicate company names for easy identification.
+            Check and highlight any invalid UK postcodes. <form method="POST" action="/upload" enctype="multipart/form-data">
             <input type="file" name="file" accept=".xlsx">
             <input type="submit" value="Upload">
         </form></div>
@@ -55,69 +56,6 @@
         <div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">...</div>
       </div>
 
-   <!-- Upload Excel Content 
-<ul class="nav nav-tabs">
-    <li class="nav-item">
-      <a class="nav-link active" aria-current="page" onclick="showTab('upload')"href="#">Upload Excel</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#" onclick="showTab('dataProfiling')">Data Profiling</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#" onclick="showTab('validate')">Validate</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-    </li>
-  </ul>-->
-<!-- Tabs header 
-<div>
-    <div class="tab active-tab" onclick="showTab('upload')">Upload Excel</div>
-    <div class="tab" onclick="showTab('dataProfiling')">Data Profiling</div>
-    <div class="tab" onclick="showTab('validate')">Validate</div>
-</div>-->
-
-
-  
-  <!-- End Example Code -->
-
-<div id="upload" style="display:none;">
-    <form method="POST" action="/upload" enctype="multipart/form-data">
-        <input type="file" name="file" accept=".xlsx">
-        <input type="submit" value="Upload">
-    </form>
-</div>
-
-<!-- Data Profiling Content -->
-<div id="dataProfiling" style="display:none;">
-    <h1>Data Profiling</h1>
-    <form method="POST" action="/data-profiling" enctype="multipart/form-data">
-        <input type="file" name="file" accept=".xlsx">
-        <input type="submit" value="Profile Data">
-    </form>
-</div>
-
-<div id="validate" style="display:none;">
-    <h1>Validate and Standardize Data</h1>
-    <form method="POST" action="/validate" enctype="multipart/form-data">
-        <input type="file" name="file" accept=".xlsx">
-        <input type="submit" value="Validate Data">
-    </form>
-</div>
-
-<script>
-    function showTab(tabName) {
-        // Hide all tabs
-        document.getElementById('upload').style.display = 'none';
-        document.getElementById('dataProfiling').style.display = 'none';
-        document.getElementById('validate').style.display = 'none';
-
-        // Show the selected tab
-        document.getElementById(tabName).style.display = 'block';
-    }
-</script>
-
 </body>
-</html>
 
 {% endblock %} 
