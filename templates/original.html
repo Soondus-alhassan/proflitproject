@@ -1,29 +1,9 @@
 {% extends "original_base.html" %}
 
-{% block content %}
-
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Excel Operations</title>
-    <style>
-        /* Styling for the tabs */
-        .tab {
-            display: inline-block;
-            padding: 10px 20px;
-            margin: 10px;
-            border: 1px solid #ccc;
-            cursor: pointer;
-        }
-
-        /* Style for the active tab */
-        .active-tab {
-            background-color: #ddd;
-        }
-    </style>
-</head>
+   {% block title %}Excel Operations {% endblock %}
+   {% block content %}
 <body>
-
+   
 <!-- Tabs header -->
 <div>
     <div class="tab active-tab" onclick="showTab('upload')">Upload Excel</div>
