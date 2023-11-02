@@ -110,6 +110,10 @@ def data_profiling():
             return render_template('data_profiling_results.html', profile=profile)
     return render_template('data_profiling.html')
 
+@app.route('/data-quality', methods=['GET', 'POST'])
+def data_quality():
+    return render_template('data_quality.html')
+
 def perform_data_profiling(file_path):
     df = pd.read_excel(file_path)
     profile = {}

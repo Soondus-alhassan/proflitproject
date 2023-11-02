@@ -2,9 +2,66 @@
 
    {% block title %}Excel Operations {% endblock %}
    {% block content %}
+<!--bootstrap example -->
+   <div class="px-4 py-5 my-5 text-center">
+    <img class="d-block mx-auto mb-4" src="/static/cap_logo.png" alt="" width="72" height="57">
+    <h1 class="display-5 fw-bold text-body-emphasis">PROFILit</h1>
+    <div class="col-lg-6 mx-auto">
+      <p class="lead mb-4">The Excel Data Quality Tool</p>
+      <p class="lead mb-4">
+        This platform allows you to upload an Excel file for a comprehensive data quality check. Upon uploading your spreadsheet, our system will 
+        provide a detailed data profiling report to help you understand your dataset's characteristics.</li>
+   
+    </p>
+   
+    <p class="lead mb-4">
+        Get started by selecting your Excel file and let our tool do the magic!
+    </p>
+   
+    </div>
+  </div>
+<!--end of example -->
+
+<!--features
+    <div class="container px-4 py-5" id="icon-grid">
 
 
-    <!-- Introduction Section -->
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-5">
+      <div class="col d-flex align-items-start">
+        <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#bootstrap"></use></svg>
+        <div>
+          <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Featured title</h3>
+          <p>Paragraph of text beneath the heading to explain the heading.</p>
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#cpu-fill"></use></svg>
+        <div>
+          <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Featured title</h3>
+          <p>Paragraph of text beneath the heading to explain the heading.</p>
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#calendar3"></use></svg>
+        <div>
+          <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Featured title</h3>
+          <p>Paragraph of text beneath the heading to explain the heading.</p>
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#home"></use></svg>
+        <div>
+          <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Featured title</h3>
+          <p>Paragraph of text beneath the heading to explain the heading.</p>
+        </div>
+      </div>
+
+      
+      </div>
+    </div>
+  </div>
+-->
+    <!-- Introduction Section 
 <div class="intro-section">
     <h2>Welcome to the Excel Data Quality Tool</h2>
     <p>
@@ -18,11 +75,12 @@
     <p>
         Get started by selecting your Excel file and let our tool do the magic!
     </p>
-</div>
+</div>-->
 
 <!--- end of introduction -->
 
     <!-- Tabs -->
+    <div class="container" >
     <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item" role="presentation">
           <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Data Quality</button> 
@@ -34,16 +92,23 @@
           <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">Validate</button>
         </li>
       </ul>
-
+   
 
       <!--- end of tabs -->
 
        <!-- Event triggered content -->
-      <div class="tab-content" id="myTabContent">
-        <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0"> Highlight duplicate company names for easy identification.
-            Check and highlight any invalid UK postcodes. 
-            
-            <form method="POST" action="/upload" enctype="multipart/form-data">
+      
+      <div class="tab-content p-4" id="myTabContent">
+          <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0"> 
+            <p>
+              <ul>
+              <li>Highlight duplicate company names for easy identification.</li>
+              <li>Check and highlight any invalid UK postcodes.</li>
+              </ul> 
+            </p>
+            <iframe width="100%" height="600px" src="{{ url_for('data_quality') }}" allowfullscreen="true">
+           
+           </iframe>     <!-- <form method="POST" action="/upload" enctype="multipart/form-data">
                 <div class="mb-3">
                     <label for="file" class="form-label"></label>
                     <input type="file" class="form-control" id="file" name="file" accept=".xlsx">
@@ -51,11 +116,14 @@
             
             <input class="btn btn-primary"  type="submit" value="Upload">
 
-            </form>
+            </form>-->
     
     </div>
-        <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">The data profiling page analyzes the uploaded Excel sheet and provides a summary of its contents, such as total records, unique values, missing values, and the top five occurrences for each column 
-           <!-- added link to data profiling homepage -->
+        <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+          <ul>
+          <li> The data profiling page analyzes the uploaded Excel sheet and provides a summary of its contents, such as total records, unique values, missing values, and the top five occurrences for each column </li>
+          </ul> 
+          <!-- added link to data profiling homepage -->
            <iframe width="100%" height="600px" src="{{ url_for('data_profiling') }}" allowfullscreen="true">
            </iframe>
           <!--
@@ -65,6 +133,7 @@
             </form>
            -->
         </div>
+
         <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0"><h4>  </h4>
             <!--
             <form method="POST" action="/validate" enctype="multipart/form-data">
@@ -75,7 +144,7 @@
         </iframe>
     </div>
       </div>
-
+    </div>
       <!--- end of content -->
 
       <!-- <script>

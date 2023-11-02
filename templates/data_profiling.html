@@ -7,14 +7,17 @@
     </div> --> 
 
     
-    <h2>Data Profiling</h2>
     <form action="/data-profiling" method="POST" enctype="multipart/form-data">
         <div class="mb-3">
-            <label for="file" class="form-label">Upload Excel File</label>
+            <label for="file" class="form-label">
             <input type="file" class="form-control" id="file" name="file" accept=".xlsx">
         </div>
         <button type="submit" class="btn btn-primary">Profile Data</button>
+    </label>
+        <!-- homepage button is unnecessary
         <a class="btn btn-outline-secondary" href="{{ url_for('index') }}" role="button">Back to Home Page</a>
+    -->
+    
     </form>
     
 {% endblock %}
