@@ -91,3 +91,8 @@ background-color: #ddd;
     background: #fff;
     box-shadow: 0 0.5rem 1rem rgba(0,0,0,.15);
     z-index: 2;}
+
+ .jumbotron {
+    background-color: #321637;padding-top: 5px;
+    padding-bottom: 5px;
+    } 
